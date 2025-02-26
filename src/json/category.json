@@ -1,0 +1,12 @@
+{
+
+    "category" : [
+
+        {"title" : "직업" , "img" : "job.png" , "href" : "/job" , "id" : "job"},
+        {"title" : "금융" , "img" : "finance.png" , "href" : "/finance" ,  "id" : "finance"},
+        {"title" : "주거" , "img" : "residence.png" , "href" : "/residence" , "id" : "residence"},
+        {"title" : "복지" , "img" : "welfare.png" , "href" : "/welfare", "id" : "welfare"},
+        {"title" : "교육" , "img" : "education.png" , "href" : "/education" , "id" : "education"}
+    
+    ]
+}

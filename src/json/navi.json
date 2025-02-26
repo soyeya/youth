@@ -1,0 +1,27 @@
+{
+    "home" : [
+        {"title" : "로그인" , "href" : "/login"}, 
+        {"title" : "회원가입" , "href" : "/join"}
+    ],
+
+    "Info" : [
+         {"title" : "찜목록" , "href" : "/myList"},
+         {"title" : "홈" , "href" : "/"}
+    ],
+
+    "join" : [
+
+          {"title" : "홈" , "href" : "/"}
+    ],
+    "loginInfo" : [
+
+        {"title" : "찜목록" , "href" : "/myList"}
+    ],
+    "detail" : [
+        {"title" : "찜목록" , "href" : "/myList"},
+        {"title" : "홈" , "href" : "/"},
+        {"title" : "로그인" , "href" : "/login"}
+    ]
+
+
+}

@@ -1,0 +1,846 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+*{margin:0; padding:0;}
+div,h1,h2,h3,h4,h5,p{margin:0;}
+ul li{list-style:none;}
+a{text-decoration: none;}
+body{
+        font-family: "IBM Plex Sans KR", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+
+
+.page{
+
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    position: relative;
+
+}
+
+.page > header{
+
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 80px;
+    z-index:99;
+
+}
+
+.page > main{
+
+    width: 100%;
+    padding: 20px 0px 100px;
+    margin:0 auto;
+    background-color: #f4f4f4;
+    position: relative;
+    top:80px;
+
+}
+
+.page > footer{
+
+    position: fixed;
+    bottom:0;
+    left:0;
+    width: 100%;
+    z-index:99;
+    
+}
+
+.title{
+
+    width: 100%;
+    height: 80px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #174283;
+
+}
+
+.title h3{
+
+    font-size: 1.5em;
+    color:#fff;
+
+}
+
+.title h3 img{
+
+    height:30px;
+    text-align: center;
+
+}
+
+.title.active a::before{
+
+    content : "ᐸ";
+    font-size: 1.2em;
+    font-weight: 900;
+    color:#fff;
+    position: absolute;
+    left:200px;
+    top:1.2em;
+
+}
+
+.title.color{
+
+    background-color: #fff;
+}
+
+.nav{
+
+    width: 100%;
+    height: 80px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: #fff;
+    border: 2px solid #174283;
+
+}
+
+.nav ul{
+
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.nav ul li{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+
+}
+
+
+.nav ul li a{
+
+    color:#174283;
+    font-size: 1em;
+
+}
+
+.nav ul li a:hover{
+
+    color:#878787;
+}
+
+.nav.color{
+
+    background-color: #174283;
+    border-top:2px solid #fff;
+    border-left:2px solid #fff;
+    border-right:2px solid #fff;
+}
+
+.nav.color li{ color:#fff;}
+.nav.color li:hover{ color:#878787;}
+.nav.color a{ color:#fff; }
+
+
+
+/* category */
+
+.category{
+
+    padding: 30px 50px;
+    margin:0 auto;
+
+}
+
+.category h3{
+
+    padding: 10px 0px 10px 50px;
+    font-size: 1em;
+    color:#000;
+    font-weight: 400;
+
+}
+
+.category h3 span{
+
+    color:#174283;
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 0px 20px;
+
+}
+
+.category ul{
+
+    padding: 10px 0px 50px 0px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category ul li{
+
+    margin:10px;
+    width:180px;
+    height:70px;
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.category ul li:hover{
+
+    border: 2px solid #174283;
+    transform: scale(1.06);
+    transition: transform 400ms;
+
+}
+
+.category ul li a{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#174283;
+    font-size: 1.2em;
+    width: 100%;
+    height: 100%;
+
+}
+
+.category ul li a img{
+
+    height:30px;
+    margin-right:8px;
+}
+
+
+
+/* board */
+
+.board{
+
+    padding: 30px 50px;
+    margin:0 auto;
+
+}
+
+.board h3{
+
+    padding: 10px 0px 30px 50px;
+    font-size: 1em;
+    font-weight: 400;
+    color:#000;
+
+}
+
+.board h3 span{
+
+    color:#174283;
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 0px 20px;
+
+}
+
+.board ul{
+
+    width: 90%;
+    padding: 20px 0px;
+    margin:0 auto;
+    background-color: rgba(225,225,225,.5);
+    border-radius: 10px;
+
+}
+
+.board ul li{
+
+    margin:8px auto;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.board ul li{
+
+    color:#174283;
+    font-size: 1em;
+    font-weight: 600;
+    background-color: #fff;
+
+}
+
+.board ul li a{ 
+
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+
+}
+
+.board ul li a p{
+
+    color:#174283;
+}
+.board ul li a span{
+
+    font-size: 0.8em;
+    margin-left:10px;
+    font-weight: 400;
+    color:#000;
+    width:calc(100% / 3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.board ul li:hover{
+
+    color:#878787;
+}
+
+/* Info */
+
+.info{
+
+    width: 100%;
+    padding: 50px 0px 200px;
+    margin:0 auto;
+}
+
+.formBox{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+
+}
+
+.formBox select{
+
+    width: 230px;
+    height: 50px;
+    color:#878787;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 30px;
+
+}
+
+.info .list{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 80%;
+    margin-top:50px;
+    margin:50px auto;
+}
+
+.info .list .listBox{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.info .list .listBox ul{
+
+    flex:1;
+    margin:5px;
+    
+    
+}
+
+.info .list .listBox ul .list_title{
+
+    width: 100%;
+    padding: 10px 0px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #174283;
+
+}
+
+.info .list .listBox ul .list_title p{
+
+    color:#fff;
+    font-weight: 800;
+    font-size: 1.3em;
+    padding: 10px;
+    flex:1;
+    text-align: center;
+}
+
+.info .list .listBox ul li{
+
+    width: 100%;
+    padding: 20px 0px;
+    margin:5px auto;
+    
+}
+
+.info .list .listBox ul li span{
+
+    color:#174283;
+    font-size: 1.2em;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.info .list .listBox ul li span:hover{
+
+    color:#c1c1c1;
+}
+
+.info .list .listBox ul li p{
+
+
+    color:#878787;
+    width: 70%;
+    padding: 10px 0px;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0 auto;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.info .list .listBox ul li a:hover p{
+    color:#c1c1c1;
+}
+
+
+/* finance */
+
+.financeInfo .list{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #fff; */
+    width: 80%;
+    margin-top:50px;
+    margin:50px auto;
+}
+
+.financeInfo .list .listBox{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.financeInfo .list .listBox ul{
+
+    flex:1;
+    margin:5px;
+    
+    
+}
+
+.financeInfo .list .listBox ul .list_title{
+
+    width: 100%;
+    padding: 10px 0px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #174283;
+
+}
+
+.financeInfo .list .listBox ul .list_title p{
+
+    color:#fff;
+    font-weight: 800;
+    font-size: 1.3em;
+    padding: 10px;
+    flex:1;
+    text-align: center;
+}
+
+.financeInfo .list .listBox ul li{
+
+    width: 100%;
+    padding: 20px 0px;
+    margin:5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    
+}
+
+.financeInfo .list .listBox ul li span{
+
+    color:#174283;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 20px;
+    font-weight: 700;
+    text-align: left;
+}
+
+
+.financeInfo .list .listBox ul li span p{
+
+    color:#878787;
+    padding: 0px 0px 0px 10px;
+    font-size: 1em;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.financeInfo .list .listBox ul li span .finDate{
+
+    font-size: 0.8em;
+    font-weight: lighter;
+    color:#333;
+}
+
+.financeInfo .list .listBox ul li span:hover{
+    color:#c1c1c1;
+}
+
+/* Detail */
+
+.detail{
+
+    width: 100%;
+    background-color:#ececec;
+    padding: 30px 0px 200px;
+    margin:0 auto;
+
+}
+
+
+.detail h3{
+
+    color:#174283;
+    padding: 20px 0px;
+    font-size: 1.2em;
+    text-align: center;
+}
+.detail ul{
+
+    margin:10px auto;
+    max-width:800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    /* border:1px solid #174283; */
+}
+
+.detail .detail_cont{ 
+    display:  block;
+    background-color: transparent;
+
+}
+.detail .detail_cont li{
+
+   max-width:780px;
+   margin:10px auto;
+
+}   
+
+.detail .detail_cont li strong{ 
+    display: block;
+    width: 150px;
+    padding: 15px 0px;
+    text-align: center;
+    background-color: #174283;
+    color:#fff;
+}
+.detail .detail_cont li p{
+
+    color:#878787;
+    padding: 0px 10px;
+    font-size: 0.9em;
+    flex:1;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.detail ul li{
+    
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+
+}
+
+.detail ul li strong{
+
+    color: #174283;
+    padding: 0px 8px;
+}
+
+
+/* Join */
+
+
+.join {
+
+    padding: 100px 0px;
+    margin:0 auto;
+
+}
+
+.join .joinBox{
+
+    background-color: #fff;
+    max-width:780px;
+    padding: 50px 20px;
+    margin:0 auto;
+}
+
+.join .joinBox h3{
+     text-align: center;
+     font-size: 0.8em;
+     color:#878787;
+     padding: 10px 0px;
+}
+
+.join .joinBox form{
+
+    max-width:680px;
+    margin:0 auto;
+    padding: 7px 0px;
+}
+
+
+.join .joinBox form input{
+
+    width: 200px;
+    height: 50px;
+    margin:5px;
+    font-size: 1em;
+    border-radius: 1px;
+    display: block;
+    color:#878787;
+    background-color: #f4f4f4;
+    border:2px solid #174283;
+    text-align: center;
+}
+
+.join .joinBox form button{
+
+    width: 100px;
+    height: 53px;
+    background-color: #174283;
+    color:#fff;
+    font-weight: 400;
+    font-size: 1em;
+    border:none;
+}
+
+.join .joinBox .submitBtn{
+
+    width: 248px;
+    height: 53px;
+    background-color: #174283;
+    color:#fff;
+    font-weight: 400;
+    border:none;
+    font-size: 1em;
+    margin: 0 auto;
+    display: block;
+}
+
+/* FormControl */
+
+.FormControl{
+
+     margin:0 auto;
+     padding: 0px 230px;
+
+}
+
+.FormControl label{
+    padding: 8px 0px;
+    font-size: 0.8em;
+    color:#878787;
+    margin:0 auto;
+}
+
+.FormControl label .required{
+    color:#f00000;
+    padding: 0px 5px;
+}
+
+
+.FormControl .error{
+
+    color:#f00000;
+    font-size: 0.7em;
+    padding: 8px 0px;
+    
+}
+
+
+/* MyList */
+
+.Mylist{
+
+    padding:100px 50px 200px;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Mylist ul{
+
+    background-color: #fff;
+    padding: 200px 100px;
+}
+
+.Mylist ul h3{
+
+    color:#174283;
+    text-align: center;
+    padding: 30px 0px;
+
+}
+.Mylist ul li{
+
+    padding: 10px;
+    
+}
+
+.Mylist ul li a{
+
+    color:#174283;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Mylist ul li a span{
+
+    padding: 0px 10px;
+}
+
+.Mylist ul li a p{
+
+    padding: 0px 10px;
+    color:#333;
+    font-size: 0.7em;
+}
+
+
+/* dialog */
+
+.dialog{
+
+    background-color: rgba(0,0,0,.6);
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:1000;
+}
+.dialog .dialogBox{
+    width: 400px;
+    height:300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index:1100;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.dialog .dialogBox > header{
+
+    font-size: 1.3em;
+    color:#174283;
+}
+
+.dialog .dialogBox > main {
+
+    color:#000;
+    font-size: 1em;
+    padding: 8px 0px;
+}
+
+.dialog .dialogBox > footer{
+
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog .dialogBox > footer button{
+
+    padding: 10px;
+    background-color: #f4f4f4;
+    color:#174283;
+    border-radius: 3px;
+    border:1px solid #174283;
+
+}
+
+.openPage{
+
+    background-color: #fff;
+    position:fixed;
+    z-index:1200;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.openPage img{
+
+    height:30px;
+}
