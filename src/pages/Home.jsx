@@ -49,7 +49,7 @@ const Home = () => {
           const res_data = res.data.youthPolicyList;
           console.log('homedata작동')
           if(!res_data.length){ //한개인 경우
-              if(res_data[i].bscPlanPlcyWayNo === '001'){ //001 일자리정책이라면
+              if(res_data.bscPlanPlcyWayNo === '001'){ //001 일자리정책이라면
                  const title = res_data.plcyNm; //정책명
                  const administration = res_data.plcySprtCn;//정책지원내용
                  arry01.push({ title, administration }) //결과물 배열로 배치

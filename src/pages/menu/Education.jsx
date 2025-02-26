@@ -48,7 +48,7 @@ const Eductaion = () => {
                     const res = await axios.get('http://localhost:3400/educationApi');
                     const res_data = res.data.youthPolicyList;
                     if(!res_data.length){ //한개인 경우
-                      if(res_data[i].bscPlanPlcyWayNo === '003'){ //003 교육정책이라면
+                      if(res_data.bscPlanPlcyWayNo === '003'){ //003 교육정책이라면
                       const result01 = [res_data.plcyNm]; //정책명
                       const result02 = [res_data.plcySprtCn];//정책내용
                       arryContent01.push(result01);
