@@ -1,25 +1,39 @@
 const mysql = require('mysql2');
 
+// Railway MySQL이 제공하는 URL 변수명은 버전마다 다를 수 있음
+// MYSQL_URL → DATABASE_URL → MYSQL_PRIVATE_URL → MYSQL_PUBLIC_URL 순서로 시도
+const rawUrl =
+  process.env.MYSQL_URL ||
+  process.env.DATABASE_URL ||
+  process.env.MYSQL_PRIVATE_URL ||
+  process.env.MYSQL_PUBLIC_URL ||
+  null;
+
 let poolConfig;
 
-if (process.env.MYSQL_URL) {
-  // Railway 배포환경: MYSQL_URL = mysql://user:pass@host:port/dbname
-  const u = new URL(process.env.MYSQL_URL);
-  poolConfig = {
-    host:     u.hostname,
-    port:     Number(u.port) || 3306,
-    user:     u.username,
-    password: decodeURIComponent(u.password),
-    database: u.pathname.replace(/^\//, ''),
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,
-  };
-  console.log('🚂 Railway MYSQL_URL 사용 →', u.hostname, ':', u.port);
-} else {
-  // 로컬 개발환경: .env 파일의 개별 항목 사용
+if (rawUrl) {
+  try {
+    const u = new URL(rawUrl);
+    poolConfig = {
+      host:     u.hostname,
+      port:     Number(u.port) || 3306,
+      user:     decodeURIComponent(u.username),
+      password: decodeURIComponent(u.password),
+      database: u.pathname.replace(/^\//, ''),
+      waitForConnections: true,
+      connectionLimit: 10,
+      queueLimit: 0,
+    };
+    console.log('🚂 Railway URL 방식 → host:', u.hostname, 'port:', u.port);
+  } catch (e) {
+    console.error('❌ DB URL 파싱 오류:', e.message);
+  }
+}
+
+if (!poolConfig) {
+  // 로컬 개발환경: .env의 개별 항목 사용
   if (!process.env.DB_PASSWORD) {
-    console.warn('⚠ 경고: DB_PASSWORD가 설정되지 않았습니다. .env 파일을 확인하세요.');
+    console.warn('⚠ 경고: DB_PASSWORD 미설정. .env 파일을 확인하세요.');
   }
   poolConfig = {
     host:     process.env.DB_HOST || '127.0.0.1',
@@ -35,7 +49,6 @@ if (process.env.MYSQL_URL) {
 
 const db = mysql.createPool(poolConfig);
 
-// 연결 테스트
 db.getConnection((err, connection) => {
   if (err) {
     console.error('❌ DB 연결 실패:', err.message);
