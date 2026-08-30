@@ -23,7 +23,7 @@
     "web-vitals": "^2.1.4",
     "xml-js": "^1.6.11",
     "nodemailer": "^6.9.14",
-    "dotenv": "^16.4.5"
+    "dotenv": "^10.0.0"
   },
   "scripts": {
     "start": "webpack server --mode development",
