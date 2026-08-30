@@ -85,7 +85,7 @@ const FinanceDetails = () => {
       setDetailData({ baseData, options: myOptions });
     } catch (err) {
       console.log('FinanceDetail 로드 오류:', err.message || err);
-      openDialog(null);
+      // 데이터 로드 실패 시 로딩만 종료
     } finally {
       finishLoading();
     }
