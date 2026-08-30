@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- House roof -->
+  <polygon points="50,5 90,40 10,40" fill="#174283"/>
+  <!-- House walls -->
+  <rect x="16" y="40" width="68" height="43" fill="#174283"/>
+  <!-- Door (white cutout) -->
+  <rect x="33" y="59" width="16" height="24" fill="white" rx="2"/>
+  <!-- Window (white cutout) -->
+  <rect x="56" y="48" width="14" height="13" fill="white" rx="2"/>
+  <!-- Magnifying glass: white lens area -->
+  <circle cx="71" cy="73" r="19" fill="white"/>
+  <!-- Magnifying glass: ring -->
+  <circle cx="71" cy="73" r="15" fill="none" stroke="#174283" stroke-width="5"/>
+  <!-- Magnifying glass: handle -->
+  <line x1="82" y1="84" x2="95" y2="97" stroke="#174283" stroke-width="7" stroke-linecap="round"/>
+</svg>
